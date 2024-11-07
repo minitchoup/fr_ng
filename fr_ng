@@ -1,0 +1,107 @@
+/// Non-official custom keyboard layout for France.
+///☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+///☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+/// First keyboard diagram: assignment of an identifier to the diagram keys.
+///○┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━━┓
+///○│TLDE │AE01 │AE02 │AE03 │AE04 │AE05 │AE06 │AE07 │AE08 │AE09 │AE10 │AE11 │AE12 ┃BKSP      ┃
+///○│     │     │     │     │     │     │     │     │     │     │     │     │     ┃          ┃
+///○┢━━━━━┷━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┺━━┳━━━━━━━┫
+///○┃TAB     ┃AD01 │AD02 │AD03 │AD04 │AD05 │AD06 │AD07 │AD08 │AD09 │AD10 │AD11 │AD12 ┃       ┃
+///○┃        ┃     │     │     │     │     │     │     │     │     │     │     │     ┃       ┃
+///○┣━━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
+///○┃         ┃AC01 │AC02 │AC03 │AC04 │AC05 │AC06 │AC07 │AC08 │AC09 │AC10 │AC11 │AC12 ┃      ┃
+///○┃         ┃     │     │     │     │     │     │     │     │     │     │     │     ┃      ┃
+///○┣━━━━━━┳━━┹──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┲━━┷━━━━━┻━━━━━━┫
+///○┃      ┃LSGT │AB01 │AB02 │AB03 │AB04 │AB05 │AB06 │AB07 │AB08 │AB09 │AB10 ┃               ┃
+///○┃      ┃     │     │     │     │     │     │     │     │     │     │     ┃               ┃
+///○┣━━━━━━┻┳━━━━┷━━┳━━┷━━━━┱┴─────┴─────┴─────┴─────┴─────┴─┲━━━┷━━━┳━┷━━━━━╋━━━━━━━┳━━━━━━━┫
+///○┃       ┃       ┃       ┃SPCE                            ┃       ┃       ┃       ┃       ┃
+///○┃       ┃       ┃       ┃                                ┃       ┃       ┃       ┃       ┃
+///○┗━━━━━━━┻━━━━━━━┻━━━━━━━┹────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+///
+/// Second keyboard diagram: assignment of symbols to keys for levels 1, 2, 3 and 4.
+///   Lvl 1 = -               ╭─────╮
+///   Lvl 2 = Shift           │ 2 4 │
+///   Lvl 3 = AltGr           │ 1 3 │
+///   Lvl 4 = Shift + AltGr   ╰─────╯
+/// 
+/// The alignment of values on a key is not random. A key contains
+/// between 2 and 4 values. They must be aligned in a
+/// "square". For value made up of more than one symbol, it's the
+/// last symbol that must be aligned with the other values on the key.
+/// 
+/// Keys that do not have a value, or have only one, will not
+/// be configured during XKB generation.
+/// 
+/// The '\' symbol must be doubled as it is the escape symbol.
+/// Symbols '│', '┃' and '▒' must be escaped if they belong to a value.
+/// 
+/// Before being retained, any value is looked up in an
+/// internal dictionary (alias). For example, "BTab" is found, associated
+/// with the identifier "ISO_Left_Tab". The latter is known by XKB,
+/// whereas "BTab" is not. In the end, "ISO_Left_Tab" will be used to
+/// create the configuration.
+/// Values that have no correspondence in the alias table are translated
+/// into unicode (Uxxxx).
+/// 
+///○┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━━┓
+///○│ ☒ ✗ │ 1 ∑ │ 2 É │ 3 ∏ │ 4 ◺ │ 5 ∞ │ 6 Δ │ 7 È │ 8 ☛ │ 9 Ç │ 0 À │ ° ≠ │ + ± ┃      ⌫ ☠ ┃ 
+///○│ ☑ ✓ │ & ⚠ │ é ~ │ " # │ ' { │ ( [ │ - | │ è ` │ _\\ │ ç ∫ │ à @ │ ) ] │ = } ┃ BSpace ⏎ ┃
+///○┢━━━━━┷━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┺━━┳━━━━━━━┫
+///○┃ BTab ⇰ ┃ A Æ │ Z ℤ │ E ⇔ │ R α │ T β │ Y ∩ │ U ∪ │ I ⇒ │ O Œ │ P Ω │ ¨ ℚ │ ≈ Ø ┃       ┃
+///○┃  Tab ↹ ┃ a æ │ z ⇧ │ e € │ r √ │ t ∧ │ y ∨ │ u ↖ │ i ↗ │ o œ │ p π │ ^ ℕ │ $ • ┃       ┃
+///○┣━━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓  ⏎   ┃
+///○┃         ┃ Q ↶ │ S ↺ │ D ↷ │ F ↻ │ G ⇄ │ H ⇅ │ J ⁋ │ K ⍰ │ L λ │ M ❩ │ % Ù │ µ ∄ ┃      ┃
+///○┃ CapsLock┃ q ⇦ │ s ⇩ │ d ⇨ │ f ℝ │ g ↔ │ h ↕ │ j ↙ │ k ↘ │ l ⌂ │ m ❨ │ ù ✝ │ * ∃ ┃      ┃
+///○┣━━━━━━┳━━┹──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┲━━┷━━━━━┻━━━━━━┫
+///○┃      ┃ > ≥ │ W ∈ │ X ∉ │ C ⊄ │ V ← │ B ↑ │ N → │ ? … │ . ⋅ │ / ⁈ │ § ⌕ ┃               ┃
+///○┃ Shift┃ < ≤ │ w « │ x » │ c ⊂ │ v ∀ │ b ↓ │ n ¬ │ , ⁇ │ ; × │ : ÷ │ ! ‼ ┃ Shift         ┃
+///○┣━━━━━━┻┳━━━━┷━━┳━━┷━━━━┱┴─────┴─────┴─────┴─────┴─────┴─┲━━━┷━━━┳━┷━━━━━╋━━━━━━━┳━━━━━━━┫
+///○┃       ┃       ┃       ┃      ␣                       ⇫ ┃       ┃       ┃       ┃       ┃
+///○┃ Ctrl  ┃ Meta  ┃ Alt   ┃  Space                       ☐ ┃ AltGr ┃ Menu  ┃ Fn    ┃ Ctrl  ┃
+///○┗━━━━━━━┻━━━━━━━┻━━━━━━━┹────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+///
+/// Third keyboard diagram: assignment of symbols to keys for levels 5, 6, 7 and 8.
+///   Lvl 5 = CapsLock                   ╭─────╮         ╭┬╮ ┏┳┓ ╔╦╗  ▛▀▜
+///   Lvl 6 = CapsLock + Shift           │ 6 8 │         │─┊┄┃━┋┅║═   
+///   Lvl 7 = CapsLock + AltGr           │ 5 7 │         ├┼┤ ┣╋┫ ╠╬╣  ▌ ▐
+///   Lvl 8 = CapsLock + Shift + AltGr   ╰─────╯         ╰┴╯ ┗┻┛ ╚╩╝  ▙▄▟
+/// Note: The ▒ symbol is special. It must be used in place of the symbol at the top left
+/// of the key when the latter is absent. Its coordinates serve as the origin for the
+/// placement of other symbols.
+///○┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━━┓
+///○│ ▶ ◀ │ ┌ ✐ │ ▒   │ ┐   │ ▲ ▼ │ ┲ ╆ │ ╈   │ ┪ ╅ │ ⎧ ⎫ │ ⦇   │ ⦈   │ ▒ ◠ │ ▬ ▪ ┃          ┃
+///○│ ▷ ◁ │ ╭ ▛ │ ┬ ▀ │ ╮ ▜ │ ▽ △ │ ┏ ┢ │ ┳   │ ┓ ┱ │ ⎛ ⎞ │ ╔ ☙ │ ╦ ❧ │ ╗ ◡ │ ▭ ▫ ┃          ┃
+///○┢━━━━━┷━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┺━━┳━━━━━━━┫
+///○┃        ┃ ▒   │ ➤   │ ▒   │ ✿ ❀ │ ┠   │ ┷ ┯ │ ▒   │ ▒   │ ▒   │ ▒   │ ◆ ▸ │ ▮ ◧ ┃       ┃
+///○┃        ┃\│   │ ─   │ ┊   │ ┄ ❁ │\┃ ┨ │ ━   │ ┋   │ ┅   │ ║   │ ═   │ ◇ ▹ │ ▯ ◨ ┃       ┃
+///○┣━━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
+///○┃         ┃ ▒   │ ▒   │ ▒   │ ● ◕ │ ╊   │ ▒   │ ╉   │ ⎨ ⎬ │ ▒   │ ▒   │ ▒   │ ★ ▰ ┃      ┃
+///○┃         ┃ ├ ▌ │ ┼   │ ┤ ▐ │ ○ ◑ │ ┣   │ ╋   │ ┫   │ ⎢ ⎥ │ ╠   │ ╬   │ ╣ ◊ │ ☆ ▱ ┃      ┃
+///○┣━━━━━━┳━━┹──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┲━━┷━━━━━┻━━━━━━┫
+///○┃      ┃ └   │ ▒ ⟪ │ ┘ ⟫ │ ◔   │ ┺ ╄ │ ╇   │ ┹ ╃ │ ⎩ ⎭ │ ▒   │ ▒   │ ▒ ♥ ┃               ┃
+///○┃      ┃ ╰ ▙ │ ┴ ▄ │ ╯ ▟ │ ◷ ◉ │ ┗ ┡ │ ┻   │ ┛ ┩ │ ⎝ ⎠ │ ╚   │ ╩   │ ╝ ♡ ┃               ┃
+///○┣━━━━━━┻┳━━━━┷━━┳━━┷━━━━┱┴─────┴─────┴─────┴─────┴─────┴─┲━━━┷━━━┳━┷━━━━━╋━━━━━━━┳━━━━━━━┫
+///○┃       ┃       ┃       ┃                                ┃       ┃       ┃       ┃       ┃
+///○┃       ┃       ┃       ┃                                ┃       ┃       ┃       ┃       ┃
+///○┗━━━━━━━┻━━━━━━━┻━━━━━━━┹────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+///
+/// The "DejaVu Sans Mono" font is one of the best "monospace" fonts for
+/// its support of Unicode symbols.
+///
+/// Example of keyboard configuration for Sway:
+///    input type:keyboard {
+///          xkb_layout "fr_ng"
+///          xkb_variant "fr_ng01"
+///    }
+///
+///●partial alphanumeric_keys modifier_keys
+///●xkb_symbols "fr_ng01" {
+///●    include "level3(ralt_switch)"
+///●    name[Group1]="French (NextGen01)";
+///●    
+///●    key <CAPS> {type[group1]="ONE_LEVEL", [ ISO_Level5_Shift ]};
+///●    modifier_map Mod3 { ISO_Level5_Shift };
+///●    
+///☛␣␣␣␣
+///●};
